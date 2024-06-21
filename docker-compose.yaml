@@ -6,7 +6,6 @@
 # docker-compose.yml 
 # DOCKER-COMPOSE FILE
 
-version: '3.1'
 services:
   springapp:
     image: mylandmarktech/spring-boot-mongo
