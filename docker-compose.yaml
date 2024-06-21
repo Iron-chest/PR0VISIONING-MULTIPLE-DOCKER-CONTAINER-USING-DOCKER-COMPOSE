@@ -11,10 +11,7 @@ services:
   springapp:
     image: mylandmarktech/spring-boot-mongo
     restart: always
-    environment:
-      MONGO_DB_HOSTNAME: mongo
-      MONGO_DB_USERNAME: devdb
-      MONGO_DB_PASSWORD: devdb123
+    env-file: .env-spring-app
     ports:
       - "8080:8080"
     networks:
@@ -23,9 +20,7 @@ services:
       mongo
   mongo:
     image: mongo
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: devdb
-      MONGO_INITDB_ROOT_PASSWORD: devdb123
+    env-file: .env-mongodb
     volumes:
       - springappvol:/data/db
     restart: always
