@@ -10,7 +10,7 @@ services:
   springapp:
     image: mylandmarktech/spring-boot-mongo
     restart: always
-    env-file: .env-spring-app
+    env_file: .env-spring-app
     ports:
       - "8080:8080"
     networks:
@@ -19,7 +19,7 @@ services:
       - mongo
   mongo:
     image: mongo
-    env-file: .env-mongodb
+    env_file: .env-mongodb
     volumes:
       - springappvol:/data/db
     restart: always
