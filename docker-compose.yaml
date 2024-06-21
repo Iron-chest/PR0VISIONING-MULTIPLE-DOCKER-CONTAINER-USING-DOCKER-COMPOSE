@@ -16,7 +16,7 @@ services:
     networks:
       - springappnet
     depends_on:
-      mongo
+      - mongo
   mongo:
     image: mongo
     env-file: .env-mongodb
